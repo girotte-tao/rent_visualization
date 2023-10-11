@@ -1,4 +1,5 @@
 import ReactEcharts from 'echarts-for-react';
+import React from "react";
 
 const BarChart = () => { 
     const option = { 

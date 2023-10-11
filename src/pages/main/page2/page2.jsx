@@ -1,7 +1,7 @@
 import React from "react";
-import BarChart from "../../../components/graphs/bar"
+import BarChart from "../../../components/graphs/barChart"
 import ScatterChart from "../../../components/graphs/scatterChart"
-import Map from "../../../components/graphs/map";
+import HeatMap from "../../../components/graphs/heatMap";
 import { Col, Row, Slider } from 'antd';
 
 const Page2 = () => {
@@ -13,7 +13,7 @@ const Page2 = () => {
                 <Col span={16}>
                     <Row gutter={[16, 16]} style={{height: '60vh'}}>
                         <Col span={24}>
-                            <Map></Map>
+                            <HeatMap></HeatMap>
                         </Col>
                     </Row>
                     <Row gutter={[16, 16]} style={{height: '30vh'}}>

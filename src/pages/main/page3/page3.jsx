@@ -1,28 +1,29 @@
 import React from "react";
 
 import { Col, Row, Slider } from 'antd';
-import BarChart from "../../../components/graphs/bar"
-
+import BarChart from "../../../components/graphs/barChart"
+import LineChart from "../../../components/graphs/lineChart"
+import TreeMap from "../../../components/graphs/treeMap"
 const Page3 = () => {
     
     return (
         <>
             <Row gutter={[16, 16]} style={{height: '45vh'}}>
                 <Col span={18}>
-                    <BarChart> </BarChart>
+                    <LineChart> </LineChart>
                 </Col>
                 <Col span={6}>
                     <BarChart> </BarChart>
                 </Col>
             </Row>
             <Row gutter={[16, 16]} style={{height: '55vh'}}>
-                <Col span={15}>
+                <Col span={18}>
                     <Row gutter={[5, 5]} style={{height: '25vh'}}>
                         <Col span={12}>
-                            <BarChart> </BarChart>
+                            <TreeMap> </TreeMap>
                         </Col>
                         <Col span={12}>
-                            <BarChart> </BarChart>
+                            <TreeMap> </TreeMap>
                         </Col>
                     </Row>
                     <Row gutter={[5, 5]} style={{height: '25vh'}}>
@@ -32,8 +33,7 @@ const Page3 = () => {
                     </Row>
                 </Col>
 
-                <Col span={9}>
-
+                <Col span={6}>
                 </Col>
             </Row>
         </>

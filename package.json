@@ -8,7 +8,6 @@
     "@testing-library/user-event": "^13.5.0",
     "antd": "^5.9.4",
     "axios": "^1.5.0",
-    "echarts": "^4.9.0",
     "echarts-for-react": "^3.0.2",
     "echarts-gl": "^1.1.2",
     "react": "^18.2.0",
@@ -39,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "echarts": "^4.7.0"
   }
 }
