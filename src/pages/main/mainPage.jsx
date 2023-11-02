@@ -9,7 +9,7 @@ const MainPage = () => {
     // this page is to show all the graphs
     // you may comment them out, and only display the one you want  to see
 
-    const [page, setPage] = useState(3)
+    const [page, setPage] = useState(1)
     const totalPages = 3
 
     const handlePageChange = () => {

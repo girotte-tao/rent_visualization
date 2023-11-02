@@ -4,6 +4,8 @@ import 'echarts-gl';
 import 'echarts/map/js/world'
 // import world from "echarts/map/json/world.json"
 import geoJsonSz from '../../static/geo/shenzhen.json'
+import shenzhenRent from '../../static/LLP_values.json'
+import shenzhenRentNorm from '../../static/normalized_data.json'
 
 import * as echarts from "echarts";
 
@@ -12,17 +14,20 @@ import population from '../../static/population.json'
 echarts.registerMap('shenzhen', geoJsonSz, {});
 
 const MapBar3DGraph = () => {
-    const filteredData = population
-      .filter(dataItem => dataItem[2] > 0)
-      .map(dataItem => [dataItem[0], dataItem[1], Math.sqrt(dataItem[2])]);
+    // const filteredData = population
+    //   .filter(dataItem => dataItem[2] > 0)
+    //   .map(dataItem => [dataItem[0], dataItem[1], Math.sqrt(dataItem[2])]);
 
+    const filteredData = shenzhenRent
+    .filter(dataItem => dataItem[2] > 0)
+    // .map(dataItem => [dataItem[0], dataItem[1], Math.sqrt(dataItem[2])]);
     // console.log(filteredData)
 
     const options = {
       backgroundColor: '#cdcfd5',
       geo3D: {
-        // map: 'shenzhen',
-        map: 'world',
+        map: 'shenzhen',
+        // map: 'world',
         shading: 'lambert',
         light: {
           main: {
@@ -73,7 +78,7 @@ const MapBar3DGraph = () => {
         regionHeight: 2
       },
       visualMap: {
-        max: 50,
+        max: 20000,
         calculable: true,
         realtime: false,
         inRange: {
