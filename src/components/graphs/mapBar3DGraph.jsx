@@ -18,6 +18,7 @@ const MapBar3DGraph = () => {
     //   .filter(dataItem => dataItem[2] > 0)
     //   .map(dataItem => [dataItem[0], dataItem[1], Math.sqrt(dataItem[2])]);
 
+    console.log(shenzhenRent)
     const filteredData = shenzhenRent
     .filter(dataItem => dataItem[2] > 0)
     // .map(dataItem => [dataItem[0], dataItem[1], Math.sqrt(dataItem[2])]);
