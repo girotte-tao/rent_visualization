@@ -2,14 +2,16 @@ import React from "react";
 import BarChart from "../../../components/graphs/barChart"
 import ScatterChart from "../../../components/graphs/scatterChart"
 import HeatMap from "../../../components/graphs/heatMap";
+import SpiralChart from "../../../components/graphs/spiralChart";
 import { Col, Row, Slider } from 'antd';
 
 const Page2 = () => {
     
     return (
         <>
+        <SpiralChart></SpiralChart>
             <Row gutter={[10, 10]}>
-
+                    
                 <Col span={16}>
                     <Row gutter={[16, 16]} style={{height: '60vh'}}>
                         <Col span={24}>
