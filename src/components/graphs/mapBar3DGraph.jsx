@@ -69,12 +69,19 @@ const MapBar3DGraph = () => {
             focalRange: 10,
             blurRadius: 10,
             fstop: 1
+          },
+          edge:{
+            enable: false
           }
         },
         temporalSuperSampling: {
           enable: true
         },
-        itemStyle: {},
+        itemStyle: {
+          color: "#fff",
+          borderWidth: 0.5,
+          borderColor: "#333"
+        },
         regionHeight: 2
       },
       visualMap: {
