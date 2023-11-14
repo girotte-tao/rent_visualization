@@ -1,5 +1,6 @@
 import React from "react";
 import BarChart from "../../../components/graphs/barChart"
+import BarChart23 from "../../../components/graphs/graph23"
 import ScatterChart from "../../../components/graphs/scatterChart"
 import HeatMap from "../../../components/graphs/heatMap";
 import { Col, Row, Slider } from 'antd';
@@ -18,7 +19,7 @@ const Page2 = () => {
                     </Row>
                     <Row gutter={[16, 16]} style={{height: '30vh'}}>
                         <Col span={24}>
-                            <BarChart> </BarChart>
+                            <BarChart23> </BarChart23>
                         </Col>
                     </Row>
                 </Col>
