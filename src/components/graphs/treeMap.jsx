@@ -1,28 +1,53 @@
 import React from "react";
 import ReactEcharts from 'echarts-for-react'
 import packageSize from '../../static/package-size.json'
-
+import house_source_nums from '../../static/rent_data_treemap.json'
 const TreeMap = () => {
 
+  console.log(house_source_nums)
+    // const treemapOption = {
+    //     series: [
+    //       {
+    //         type: 'treemap',
+    //         id: 'rent_data_treemap',
+    //         animationDurationUpdate: 2000,
+    //         roam: false,
+    //         nodeClick: undefined,
+    //          data: house_source_nums.children,
+    //         //data: packageSize.children,
+    //         universalTransition: true,
+    //         label: {
+    //           show: true
+    //         },
+    //         breadcrumb: {
+    //           show: false
+    //         }
+    //       }
+    //     ]
+    // };
     const treemapOption = {
-        series: [
-          {
-            type: 'treemap',
-            id: 'echarts-package-size',
-            animationDurationUpdate: 2000,
-            roam: false,
-            nodeClick: undefined,
-            data: packageSize.children,
-            universalTransition: true,
-            label: {
-              show: true
-            },
-            breadcrumb: {
-              show: false
-            }
+      tooltip: {
+          trigger: 'item',
+          formatter: '{b}: {c}'
+      },
+      series: [
+        {
+          type: 'treemap',
+          id: 'rent_data_treemap',
+          animationDurationUpdate: 2000,
+          roam: false,
+          nodeClick: 'zoomToNode',
+          data: house_source_nums.children,
+          universalTransition: true,
+          label: {
+            show: true
+          },
+          breadcrumb: {
+            show: false
           }
-        ]
-    };
+        }
+      ]
+  };
 
     const sunburstOption = {
         series: [
