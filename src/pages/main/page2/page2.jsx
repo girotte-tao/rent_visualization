@@ -3,6 +3,8 @@ import BarChart from "../../../components/graphs/barChart"
 import BarChart23 from "../../../components/graphs/graph23"
 import ScatterChart from "../../../components/graphs/scatterChart"
 import HeatMap from "../../../components/graphs/heatMap";
+import Table from "../../../components/graphs/table"
+import CorelationChart from "../../../components/graphs/CorelationChart2"
 import { Col, Row, Slider } from 'antd';
 
 const Page2 = () => {
@@ -27,17 +29,13 @@ const Page2 = () => {
                 <Col span={8}>
                     <Row gutter={[16, 16]} style={{height: '30vh'}}>
                         <Col span={24}>
-                            <ScatterChart> </ScatterChart>
+                            <Table> </Table>
                         </Col>
                     </Row>
-                    <Row gutter={[16, 16]} style={{height: '30vh'}}>
+                   
+                    <Row gutter={[25, 25]} style={{height: '55vh'}}>
                         <Col span={24}>
-                            <ScatterChart> </ScatterChart>
-                        </Col>
-                    </Row>
-                    <Row gutter={[16, 16]} style={{height: '30vh'}}>
-                        <Col span={24}>
-                            <ScatterChart> </ScatterChart>
+                            <CorelationChart> </CorelationChart>
                         </Col>
                     </Row>
                 </Col>
