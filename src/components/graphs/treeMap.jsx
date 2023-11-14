@@ -64,7 +64,7 @@ const TreeMap = () => {
             <ReactEcharts
                 option={currentOption}
                 style={{
-                  height:'25vh',
+                  height:'55vh',
                   width:'100%'
                 }}
             />
