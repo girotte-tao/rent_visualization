@@ -163,7 +163,7 @@ const HeatMap = () => {
           show: false,
           top: 'top',
           min: 0,
-          max: 5,
+          max: 10,
           seriesIndex: 0,
           calculable: true,
           inRange: {
