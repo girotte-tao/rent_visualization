@@ -15,9 +15,23 @@ const monthAbbreviations = [
     "Nov",
     "Dec"
   ];
-  
 
-const LineChart = () => { 
+  const monthAbbreviationsToNumber = {
+    "Jan": 1,
+    "Feb": 2,
+    "Mar": 3,
+    "Apr": 4,
+    "May": 5,
+    "Jun": 6,
+    "Jul": 7,
+    "Aug": 8,
+    "Sep": 9,
+    "Oct": 10,
+    "Nov": 11,
+    "Dec": 12
+  };
+
+const LineChart = (params) => { 
     const option = {
         title: {
           text: 'Stacked Line'
@@ -63,6 +77,17 @@ const LineChart = () => {
         ]
       };
 
-return <ReactEcharts style={{height: '100%'}} option={option} />; };
+    const onClick = (e) => {
+      console.log(e)
+    }
+
+    return <ReactEcharts style={{height: '100%'}} option={option} 
+              onEvents={{
+                  click: (event)=>{
+                    params.onChange(event.seriesName, monthAbbreviationsToNumber[event.name])
+                  }
+              }}  
+            />; 
+};
 
 export default LineChart;
