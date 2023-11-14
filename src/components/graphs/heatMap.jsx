@@ -1,14 +1,21 @@
 import React from "react";
 import ReactEcharts from 'echarts-for-react'
-import hangzhouTrack from '../../static/hangzhou-track.json'
+import ShenzhenTrack from '../../static/Ave_Price.json'
+
+import h from '../../static/hangzhou-track.json'
 
 import 'echarts/extension/bmap/bmap'; 
 
+console.log((ShenzhenTrack.length))
+console.log((h.length))
+
+
 const HeatMap = () => {
+
 
     var points = [].concat.apply(
       [],
-      hangzhouTrack.map(function (track) {
+      ShenzhenTrack.map(function (track) {
         return track.map(function (seg) {
           return seg.coord.concat([1]);
         });
@@ -30,8 +37,8 @@ const HeatMap = () => {
           }
         },
         bmap: {
-          // center: [114.064552, 22.548457],
-          center: [120.13066322374, 30.240018034923],
+          center: [114.064552, 22.548457],
+          // center: [120.13066322374, 30.240018034923],
           zoom: 12,
           roam: true,
           mapStyle: {
