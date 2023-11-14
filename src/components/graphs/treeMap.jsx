@@ -1,28 +1,34 @@
 import React from "react";
 import ReactEcharts from 'echarts-for-react'
 import packageSize from '../../static/package-size.json'
+import house_source_nums from '../../static/rent_data_treemap_timeful.json'
+const TreeMap = ({data}) => {
 
-const TreeMap = () => {
+    const children = data.children
 
     const treemapOption = {
-        series: [
-          {
-            type: 'treemap',
-            id: 'echarts-package-size',
-            animationDurationUpdate: 2000,
-            roam: false,
-            nodeClick: undefined,
-            data: packageSize.children,
-            universalTransition: true,
-            label: {
-              show: true
-            },
-            breadcrumb: {
-              show: false
-            }
+      tooltip: {
+          trigger: 'item',
+          formatter: '{b}: {c}'
+      },
+      series: [
+        {
+          type: 'treemap',
+          id: 'rent_data_treemap',
+          animationDurationUpdate: 2000,
+          roam: false,
+          nodeClick: 'zoomToNode',
+          data: children,
+          universalTransition: true,
+          label: {
+            show: true
+          },
+          breadcrumb: {
+            show: false
           }
-        ]
-    };
+        }
+      ]
+  };
 
     const sunburstOption = {
         series: [
@@ -45,24 +51,10 @@ const TreeMap = () => {
         ]
     };
  
-    const [currentOption, setCurrentOption] = React.useState(treemapOption);
-    const [type, setType] = React.useState('treemap');
-    // setInterval(function () {
-    //     if (type == 'treemap'){
-    //         setType('sunburst')
-    //         setCurrentOption(sunburstOption)
-    //     }else {
-    //         setType('treemap')
-    //         setCurrentOption(treemapOption)
-    //     }
-    //     // setCurrentOption(treemapOption ? sunburstOption : treemapOption)
-    // }, 5000);
-
-
     return (
         <div>
             <ReactEcharts
-                option={currentOption}
+                option={treemapOption}
                 style={{
                   height:'55vh',
                   width:'100%'

@@ -7,7 +7,7 @@ import TreeMap from "../../../components/graphs/treeMap"
 import qrcode from "../../../static/qrcode.jpg"
 import LineChart31 from "../../../components/graphs/graph31"
 
-// import house_source_nums from '../../../static/rent_data_treemap_timeful.json'
+import house_source_nums from '../../../static/rent_data_treemap_timeful.json'
 
 const Page3 = () => {
 
@@ -15,11 +15,14 @@ const Page3 = () => {
 
     const [t, setT] = useState({y: 2019, m: 5})
 
+    const [data, setData] = useState(house_source_nums[t.y][t.m])
+
     const onChange = (year, month) => {
         console.log(year, month)
         setT({
             y: year, m: month
         })
+        setData(house_source_nums[year][month])
     }
 
 
@@ -37,7 +40,9 @@ const Page3 = () => {
                 <Col span={17}>
                     <Row gutter={[5, 5]} style={{height: '55vh'}}>
                         <Col span={24}>
-                            <TreeMap initialMonth={t.m} initialYear={t.y}> </TreeMap>
+                            {/* <TreeMap initialMonth={t.m} initialYear={t.y}> </TreeMap> */}
+                            <TreeMap data={data}> </TreeMap>
+
                         </Col>
                         {/* <Col span={12}>
                             <TreeMap> </TreeMap>
