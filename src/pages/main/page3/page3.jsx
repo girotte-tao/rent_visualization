@@ -8,6 +8,8 @@ import qrcode from "../../../static/qrcode.jpg"
 import LineChart31 from "../../../components/graphs/graph31"
 
 import house_source_nums from '../../../static/rent_data_treemap_timeful.json'
+import RoseChart from "../../../components/graphs/roseChart";
+import RoseChartStack from "../../../components/graphs/roseChartStack";
 
 const Page3 = () => {
 
@@ -33,7 +35,9 @@ const Page3 = () => {
                     <LineChart31 onChange={onChange}> </LineChart31>
                 </Col>
                 <Col span={6}>
-                    <BarChart> </BarChart>
+                    {/* <BarChart> </BarChart> */}
+                    {/* <RoseChart></RoseChart> */}
+                    <RoseChartStack></RoseChartStack>
                 </Col>
             </Row>
             <Row gutter={[16, 16]} style={{height: '50vh', marginTop:'3vh'}}>
