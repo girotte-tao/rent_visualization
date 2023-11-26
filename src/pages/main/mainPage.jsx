@@ -3,6 +3,8 @@ import GraphContainer from "../../components/graphContainer/graphContainer";
 import Page1 from "./page1/page1";
 import Page2 from "./page2/page2";
 import Page3 from "./page3/page3";
+import Page4 from "./page4/page4";
+
 import { Affix, Button, Space } from 'antd';
 
 const MainPage = () => {
@@ -20,7 +22,7 @@ const MainPage = () => {
 
     return (
         <>
-            <Affix offsetTop={10} style={{marginLeft:'90%', position:'absolute'}}>
+            <Affix offsetTop={10} style={{marginLeft:'80%', position:'absolute'}}>
             
                 <Space>
                     <Button type="primary" id='1' onClick={handlePageChange}>1</Button>
@@ -28,6 +30,9 @@ const MainPage = () => {
                     <Button type="primary" id='2' onClick={handlePageChange}>2</Button>
 
                     <Button type="primary" id='3' onClick={handlePageChange}>3</Button>
+
+                    <Button type="primary" id='4' onClick={handlePageChange}>4</Button>
+
                 </Space>
               
             </Affix>
@@ -37,6 +42,8 @@ const MainPage = () => {
                     {page===1 && <Page1></Page1>}
                     {page===2 && <Page2></Page2>}
                     {page===3 && <Page3></Page3>}
+                    {page===4 && <Page4></Page4>}
+
                 </GraphContainer>
             </div>
         </>
