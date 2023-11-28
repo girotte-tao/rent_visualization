@@ -31,10 +31,9 @@ const MainPage = () => {
 
                     {/* <Button type="primary" id='3' onClick={handlePageChange}>3</Button> */}
 
-                    <Button type="primary" id='2' onClick={handlePageChange}>2</Button>
+                    {/* <Button type="primary" id='2' onClick={handlePageChange}>2</Button> */}
 
                     <Button type="primary" id='3' onClick={handlePageChange}>3</Button>
-
 
                 </Space>
               

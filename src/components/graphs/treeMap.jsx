@@ -115,4 +115,4 @@ const TreeMap = ({data, onChange}) => {
     )
 }
 
-export default TreeMap
+export default React.memo(TreeMap)

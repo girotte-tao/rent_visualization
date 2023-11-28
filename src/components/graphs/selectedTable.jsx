@@ -13,7 +13,7 @@ const SelectedTable = ({props}) => {
             ellipsis: true
         },
         {
-            title: "Price/¥",
+            title: "Price",
             dataIndex: "Price"
         },
         {
@@ -27,7 +27,7 @@ const SelectedTable = ({props}) => {
 
     ];
 
-
+    console.log(props)
 
     const modifyData = (dataset) => {
         var selectedData = [];

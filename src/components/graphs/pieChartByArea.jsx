@@ -30,7 +30,8 @@ const PieChartByArea = ({type, area, onChange}) => {
     const modifyData = (data) => {
         return Object.keys(data).map(key => ({
             name: key,
-            value: data[key]
+            value: data[key],
+            // selected: true
         }));
     }
 

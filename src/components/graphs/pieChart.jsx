@@ -1,7 +1,33 @@
 import ReactEcharts from 'echarts-for-react';
-import React from "react";
+import React, { useState , useEffect} from "react";
 
-const PieChart = ({data, onChange}) => {     
+const PieChart = ({data, onChange}) => { 
+  
+  console.log(data)
+
+
+    const [pieData, setPieData] = useState(data)
+
+    const changePieData = (name)=>{
+
+      const newData =data.map((value) => {
+
+        if (value.name === name){
+          return {
+            ...value,
+            selected: true
+            }
+        }
+        else {
+          return value
+        }
+      }
+        
+    )
+    setPieData(newData)
+
+    }
+
 
     const option = {
         tooltip: {
@@ -36,7 +62,7 @@ const PieChart = ({data, onChange}) => {
             labelLine: {
               show: false
             },
-            data: data
+            data: pieData
           }
         ]
       };
@@ -44,6 +70,7 @@ const PieChart = ({data, onChange}) => {
 return <ReactEcharts style={{height: '100%'}} option={option} onEvents={{
     click: (event)=>{
       onChange(event.data.name)
+      changePieData(event.data.name)
     }
 }}  />; }
 

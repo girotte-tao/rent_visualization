@@ -13,6 +13,7 @@ import house_source_nums from '../../../static/rent_data_treemap_timeful.json'
 import PieChartByArea from "../../../components/graphs/pieChartByArea";
 import SelectedTable from "../../../components/graphs/selectedTable"
 import {SharedStateContext, SharedStateProvider} from "../../../components/context/pageContext"
+import TableAndQR from "../../../components/graphs/tableAndQR"
 
 const Page4 = () => {
 
@@ -65,7 +66,7 @@ const Page4 = () => {
     const valueRef = useRef(defaultProp)
 
     const [blockChoice, setBlockChoice] = useState(null)
-    const blockChoices = ['0 - 5000', '5000 - 10000', '10000 - 15000', '15000 - 20000']
+    const blockChoices = ['0 - 2000', '2000 - 4000', '4000 - 8000', '8000+']
     const onBlockChange = (num) =>{
         console.log(num)
         setBlockChoice(num)
@@ -75,11 +76,11 @@ const Page4 = () => {
 
     const [region, setRegion] = useState('shenzhen')
     // const region = 'shenzhen'
-    const onRegionChange = (region) =>{
+    const onRegionChange = useCallback((region) =>{
         setRegion(region)
         setProps({...props, region:region})
         // valueRef.current.region=region
-    }
+    }, [blockChoice])
 
 
     const [area, setArea] = useState('X')
@@ -151,13 +152,13 @@ const Page4 = () => {
         let price_range = {min: 0, max:0}
 
         if (blockNum===1){
-            price_range = {min: 0, max:5000}
+            price_range = {min: 0, max:2000}
         }else if(blockNum===2){
-            price_range = {min: 5000, max:10000}
+            price_range = {min: 2000, max:4000}
         }else if(blockNum===3){
-            price_range = {min: 10000, max:15000}
+            price_range = {min: 4000, max:8000}
         }else if(blockNum===4){
-            price_range = {min: 15000, max:20000}
+            price_range = {min: 8000, max:100000000}
         }
         return price_range
     }
@@ -295,7 +296,7 @@ const Page4 = () => {
                         </Col>
 
                         <Col span={6}>
-                            <Row style={{height: '34vh', marginTop:'1vh'}}>
+                            {/* <Row style={{height: '34vh', marginTop:'1vh'}}>
                                 <SelectedTable  
                                 // ref={valueRef}
                                 props={props}
@@ -306,7 +307,8 @@ const Page4 = () => {
                                 <div>
                                     <Image src={qrcode} style={{height:'30vh', marginLeft:'2vh'}}></Image>
                                 </div>
-                            </Row>
+                            </Row> */}
+                            <TableAndQR props={props}></TableAndQR>
                         </Col>
 
                     </Row>
