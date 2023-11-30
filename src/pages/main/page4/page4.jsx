@@ -92,7 +92,7 @@ const Page4 = () => {
         // valueRef.current.area=area
         // setTableProp(getTableProp(valueRef))
         // setArea(area)
-    },[blockChoice])
+    },[blockChoice, region])
 
     const [floor, setFloor] = useState('')
     const onFloorChange = useCallback((floor) =>{
@@ -100,7 +100,7 @@ const Page4 = () => {
         setFloor(floor)
         setProps({...props, floor:getFloorRange(floor)})
 
-    },[blockChoice])
+    },[blockChoice, region])
 
     const [method, setMethod] = useState('')
     const onMethodChange = useCallback((method) =>{
@@ -109,7 +109,7 @@ const Page4 = () => {
         setMethod(method)
         setProps({...props, method:method})
 
-    },[blockChoice])
+    },[blockChoice, region])
 
     const [orientation, setOrientation] = useState('')
     const onOrientationChange = useCallback((orientation) =>{
@@ -118,7 +118,7 @@ const Page4 = () => {
         setOrientation(orientation)
         setProps({...props, orientation:orientation})
 
-    },[blockChoice])
+    },[blockChoice, region])
 
     const [subway, setSubway] = useState('')
     const onSubwayChange = useCallback((subway) =>{

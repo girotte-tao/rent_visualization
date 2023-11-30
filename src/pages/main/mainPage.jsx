@@ -11,7 +11,7 @@ const MainPage = () => {
     // this page is to show all the graphs
     // you may comment them out, and only display the one you want  to see
 
-    const [page, setPage] = useState(1)
+    const [page, setPage] = useState(3)
     const totalPages = 3
 
     const handlePageChange = (e) => {
@@ -25,7 +25,7 @@ const MainPage = () => {
             <Affix offsetTop={10} style={{marginLeft:'80%', position:'absolute'}}>
             
                 <Space>
-                    <Button type="primary" id='1' onClick={handlePageChange}>1</Button>
+                    {/* <Button type="primary" id='1' onClick={handlePageChange}>1</Button> */}
 
                     {/* <Button type="primary" id='2' onClick={handlePageChange}>2</Button> */}
 
@@ -33,7 +33,7 @@ const MainPage = () => {
 
                     {/* <Button type="primary" id='2' onClick={handlePageChange}>2</Button> */}
 
-                    <Button type="primary" id='3' onClick={handlePageChange}>3</Button>
+                    {/* <Button type="primary" id='3' onClick={handlePageChange}>3</Button> */}
 
                 </Space>
               
